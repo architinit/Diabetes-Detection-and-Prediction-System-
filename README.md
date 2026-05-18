@@ -1,69 +1,84 @@
-# Diabetes Detection and Prediction System
+# Diabetes Detection and Prediction Using the Machine Learning Paradigm
 
-A machine learning-based system for early detection and prediction of diabetes, built using the PIMA Indians Diabetes dataset. This project was developed as part of a research study **published in IEEE Xplore (2025)**.
-
----
-
-## 📄 Research Publication
-
-> **"Machine Learning-Based Approach for Diabetes Detection and Prediction"**  
-> Published in **IEEE Xplore**, 2025  
-> 🔗 [View Paper on IEEE Xplore](https://ieeexplore.ieee.org/document/11011335)
+> 📄 **This project is based on a research paper published at IEEE — [View on IEEE Xplore](https://ieeexplore.ieee.org/document/11011335)**
 
 ---
 
 ## 📌 Overview
 
-Diabetes is one of the fastest-growing chronic diseases globally. Early detection is critical to preventing complications. This project applies and benchmarks multiple supervised machine learning algorithms to predict the onset of diabetes based on diagnostic measurements, with the goal of enabling accurate and early-stage risk assessment.
+Diabetes mellitus is a chronic metabolic disorder with over 537 million affected adults worldwide. Early detection is critical to preventing complications such as cardiovascular disease, kidney failure, and nerve damage.
+
+This project applies and benchmarks **7 supervised machine learning algorithms** on a dataset of 50,000 patient records, incorporating both traditional health indicators and **gender-specific factors** (hormonal influences, BMI thresholds, gestational history) to build a robust and inclusive diabetes prediction system.
 
 ---
 
-## 🚀 Features
+## 📄 Research Publication
 
-- Data preprocessing including feature scaling and class imbalance handling
-- Benchmarking of multiple ML algorithms: Logistic Regression, SVM, and Random Forest
-- Model evaluation using Accuracy, Precision, Recall, F1-Score, and AUC-ROC
-- Hyperparameter tuning via cross-validation for optimized performance
-- Clean Jupyter Notebook with step-by-step implementation
+| Field | Details |
+|---|---|
+| **Title** | Diabetes Detection and Prediction Using the Machine Learning Paradigm |
+| **Authors** | Saksham Gupta, Aarush Wali, Gandharv Kaloo, **Archit Bali**, Palvi Sharma |
+| **Institution** | Model Institute of Engineering & Technology, Jammu, India |
+| **Published in** | IEEE Xplore (2025) |
+| **DOI / Link** | [https://ieeexplore.ieee.org/document/11011335](https://ieeexplore.ieee.org/document/11011335) |
 
 ---
 
 ## 🗂️ Dataset
 
-**PIMA Indians Diabetes Dataset**  
-- Source: UCI Machine Learning Repository  
-- 768 samples, 8 diagnostic features  
-- Binary classification: Diabetic (1) / Non-Diabetic (0)
+- **Source:** Kaggle (merged & processed)
+- **Size:** 50,000 entries, 12 attributes
+- **Split:** 80% training (40,000) / 20% testing (10,000)
 
 **Features:**
 | Feature | Description |
 |---|---|
-| Pregnancies | Number of times pregnant |
-| Glucose | Plasma glucose concentration |
-| BloodPressure | Diastolic blood pressure (mm Hg) |
-| SkinThickness | Triceps skinfold thickness (mm) |
-| Insulin | 2-Hour serum insulin (mu U/ml) |
-| BMI | Body mass index |
-| DiabetesPedigreeFunction | Diabetes pedigree function |
-| Age | Age in years |
+| Gender | Male / Female (encoded: 1 / 0) |
+| Age | Patient age in years |
+| Hypertension | Presence of hypertension |
+| Heart Disease | Presence of heart disease |
+| Smoking History | Categorical smoking status |
+| BMI | Body Mass Index |
+| HbA1c Level | Glycated haemoglobin level |
+| Blood Glucose Level | Fasting blood glucose |
+| Pregnancies | Number of pregnancies |
+| Genetics | Genetic predisposition flag |
+| Cholesterol | Cholesterol level |
+| Blood Pressure | Diastolic blood pressure |
 
 ---
 
 ## 🛠️ Tech Stack
 
 - **Language:** Python 3
-- **Libraries:** Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn
+- **Libraries:** Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn, XGBoost
+- **Preprocessing:** Min-Max Normalization, Label Encoding, Standard Scaler
 - **Environment:** Jupyter Notebook
 
 ---
 
-## 📊 Models Used
+## 🤖 ML Algorithms Benchmarked
 
-| Model | Description |
-|---|---|
-| Logistic Regression | Baseline linear classifier |
-| Support Vector Machine (SVM) | Kernel-based classification |
-| Random Forest | Ensemble tree-based classifier |
+| Algorithm | Accuracy | Precision | Recall | F1-Score |
+|---|---|---|---|---|
+| Logistic Regression | 0.81 | 0.84 | 0.94 | 0.89 |
+| Decision Tree | 0.78 | 0.87 | 0.85 | 0.86 |
+| K-Nearest Neighbor | 0.82 | 0.84 | 0.96 | 0.89 |
+| Random Forest | 0.85 | 0.85 | 0.99 | 0.92 |
+| Naive Bayes | 0.80 | 0.85 | 0.91 | 0.88 |
+| XGBoost | 0.85 | 0.86 | 0.98 | 0.91 |
+| **Gradient Boosting** | **0.86** | **0.85** | **0.98** | **0.92** |
+
+**Gradient Boosting** achieved the best performance with **86% accuracy** and an AUC of **0.84**, demonstrating strong generalization with minimal overfitting.
+
+---
+
+## 🔑 Key Findings
+
+- **Gradient Boosting & XGBoost** outperformed all other models due to ensemble learning and regularization
+- **Gender-specific factors** (BMI thresholds, hormonal variations, gestational history) significantly improved prediction reliability
+- **Blood glucose level (0.26)**, **cholesterol (0.32)**, and **HbA1c (0.26)** were the strongest predictors of diabetes
+- **Gender and pregnancy** showed a strong negative correlation (-0.85), validating the importance of gender-aware modeling
 
 ---
 
@@ -77,7 +92,7 @@ Diabetes is one of the fastest-growing chronic diseases globally. Early detectio
 
 2. Install dependencies:
    ```bash
-   pip install pandas numpy scikit-learn matplotlib seaborn jupyter
+   pip install pandas numpy scikit-learn matplotlib seaborn xgboost jupyter
    ```
 
 3. Launch the notebook:
@@ -98,13 +113,14 @@ B.Tech CSE (AI/ML) — Model Institute of Engineering and Technology, Jammu
 
 ## 📜 Citation
 
-If you use this work, please cite the published paper:
+If you use this work, please cite:
 
 ```
-A. Bali, "Machine Learning-Based Approach for Diabetes Detection and Prediction,"
+S. Gupta, A. Wali, G. Kaloo, A. Bali, P. Sharma,
+"Diabetes Detection and Prediction Using the Machine Learning Paradigm,"
 IEEE Xplore, 2025. https://ieeexplore.ieee.org/document/11011335
 ```
 
 ---
 
-## ⭐ If you found this useful, consider starring the repository!
+⭐ If you found this useful, consider starring the repository!
