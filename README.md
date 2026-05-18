@@ -30,16 +30,27 @@ This project benchmarks **7 supervised ML algorithms** on a dataset of **50,000 
 ## 🔄 Methodology Flowchart
 
 ```mermaid
-flowchart TD
-    A[🗄️ Dataset\n50,000 Records - 12 Features] --> B[🔍 Feature Selection\nCorrelation Heatmap Analysis]
-    B --> C[⚙️ Data Preprocessing\nMin-Max Normalization · Label Encoding · Scaling]
-    C --> D[🤖 ML Model Training\nLogistic Regression · KNN · Decision Tree\nRandom Forest · Naive Bayes · XGBoost · Gradient Boost]
-    D --> E[📊 Performance Evaluation\nAccuracy · Precision · Recall · F1-Score · AUC-ROC]
-    E --> F{🏆 Best Model?}
-    F -->|Yes - 86% Accuracy| G[✅ Gradient Boosting\nAUC = 0.84]
-    F -->|Runner Up - 85%| H[🥈 XGBoost & Random Forest]
-    G --> I[🩺 Diabetes Risk Prediction]
-    H --> I
+flowchart LR
+    A([🗄️ Dataset\n50K · 12 Features]) --> B[🔍 Feature\nSelection]
+    B --> C[⚙️ Preprocessing\nNormalization · Encoding]
+    C --> D[✂️ Train / Test\n80% · 20%]
+
+    D --> subML
+
+    subgraph subML [🤖 ML Models]
+        direction TB
+        M1[Logistic Reg.] 
+        M2[Decision Tree]
+        M3[KNN]
+        M4[Random Forest]
+        M5[Naive Bayes]
+        M6[XGBoost]
+        M7[Gradient Boost]
+    end
+
+    subML --> E[📊 Evaluation\nAccuracy · F1 · AUC-ROC]
+    E --> F([🏆 Gradient Boost\n86% Acc · AUC 0.84])
+    F --> G([🩺 Diabetes\nRisk Prediction])
 ```
 
 ---
