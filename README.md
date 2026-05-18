@@ -1,63 +1,88 @@
-# Diabetes Detection and Prediction Using the Machine Learning Paradigm
+# 🩺 Diabetes Detection and Prediction System
 
-> 📄 **This project is based on a research paper published at IEEE — [View on IEEE Xplore](https://ieeexplore.ieee.org/document/11011335)**
+![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python&logoColor=white)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-ML-orange?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
+![IEEE](https://img.shields.io/badge/Published-IEEE%20Xplore%202025-00629B?style=for-the-badge&logo=ieee&logoColor=white)
+
+> 🏆 A machine learning system for early diabetes detection — **a research paper on this project was written and published in IEEE Xplore (2025).**
+
+---
+
+## 📄 IEEE Publication
+
+> **"Diabetes Detection and Prediction Using the Machine Learning Paradigm"**  
+> 👥 Saksham Gupta, Aarush Wali, Gandharv Kaloo, **Archit Bali**, Palvi Sharma  
+> 🏫 Model Institute of Engineering & Technology, Jammu, India  
+> 📰 **Published in IEEE Xplore, 2025**  
+> 🔗 [Read the Paper →](https://ieeexplore.ieee.org/document/11011335)
 
 ---
 
 ## 📌 Overview
 
-Diabetes mellitus is a chronic metabolic disorder with over 537 million affected adults worldwide. Early detection is critical to preventing complications such as cardiovascular disease, kidney failure, and nerve damage.
+Diabetes mellitus affects over **537 million adults** worldwide. Early detection is critical to preventing life-threatening complications like cardiovascular disease, kidney failure, and nerve damage.
 
-This project applies and benchmarks **7 supervised machine learning algorithms** on a dataset of 50,000 patient records, incorporating both traditional health indicators and **gender-specific factors** (hormonal influences, BMI thresholds, gestational history) to build a robust and inclusive diabetes prediction system.
+This project benchmarks **7 supervised ML algorithms** on a dataset of **50,000 patient records**, incorporating both traditional health indicators and **gender-specific factors** (hormonal influences, BMI thresholds, gestational history) to build a robust, inclusive prediction system.
 
 ---
 
-## 📄 Research Publication
+## 🔄 Methodology Flowchart
 
-| Field | Details |
-|---|---|
-| **Title** | Diabetes Detection and Prediction Using the Machine Learning Paradigm |
-| **Authors** | Saksham Gupta, Aarush Wali, Gandharv Kaloo, **Archit Bali**, Palvi Sharma |
-| **Institution** | Model Institute of Engineering & Technology, Jammu, India |
-| **Published in** | IEEE Xplore (2025) |
-| **DOI / Link** | [https://ieeexplore.ieee.org/document/11011335](https://ieeexplore.ieee.org/document/11011335) |
+```mermaid
+flowchart TD
+    A[🗄️ Dataset\n50,000 Records - 12 Features] --> B[🔍 Feature Selection\nCorrelation Heatmap Analysis]
+    B --> C[⚙️ Data Preprocessing\nMin-Max Normalization · Label Encoding · Scaling]
+    C --> D[🤖 ML Model Training\nLogistic Regression · KNN · Decision Tree\nRandom Forest · Naive Bayes · XGBoost · Gradient Boost]
+    D --> E[📊 Performance Evaluation\nAccuracy · Precision · Recall · F1-Score · AUC-ROC]
+    E --> F{🏆 Best Model?}
+    F -->|Yes - 86% Accuracy| G[✅ Gradient Boosting\nAUC = 0.84]
+    F -->|Runner Up - 85%| H[🥈 XGBoost & Random Forest]
+    G --> I[🩺 Diabetes Risk Prediction]
+    H --> I
+```
 
 ---
 
 ## 🗂️ Dataset
 
-- **Source:** Kaggle (merged & processed)
-- **Size:** 50,000 entries, 12 attributes
-- **Split:** 80% training (40,000) / 20% testing (10,000)
+| Property | Details |
+|---|---|
+| 📦 Source | Kaggle (merged & processed) |
+| 📏 Size | 50,000 entries · 12 attributes |
+| ✂️ Split | 80% Train (40,000) / 20% Test (10,000) |
 
-**Features:**
+**Features used:**
+
 | Feature | Description |
 |---|---|
-| Gender | Male / Female (encoded: 1 / 0) |
-| Age | Patient age in years |
-| Hypertension | Presence of hypertension |
-| Heart Disease | Presence of heart disease |
-| Smoking History | Categorical smoking status |
-| BMI | Body Mass Index |
-| HbA1c Level | Glycated haemoglobin level |
-| Blood Glucose Level | Fasting blood glucose |
-| Pregnancies | Number of pregnancies |
-| Genetics | Genetic predisposition flag |
-| Cholesterol | Cholesterol level |
-| Blood Pressure | Diastolic blood pressure |
+| 👤 Gender | Male / Female (encoded: 1 / 0) |
+| 🎂 Age | Patient age in years |
+| 💉 HbA1c Level | Glycated haemoglobin level |
+| 🩸 Blood Glucose Level | Fasting blood glucose |
+| ⚖️ BMI | Body Mass Index |
+| ❤️ Heart Disease | Presence of heart disease |
+| 🫀 Hypertension | Presence of hypertension |
+| 🚬 Smoking History | Categorical smoking status |
+| 🤰 Pregnancies | Number of pregnancies |
+| 🧬 Genetics | Genetic predisposition flag |
+| 🧪 Cholesterol | Cholesterol level |
+| 💊 Blood Pressure | Diastolic blood pressure |
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Language:** Python 3
-- **Libraries:** Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn, XGBoost
-- **Preprocessing:** Min-Max Normalization, Label Encoding, Standard Scaler
-- **Environment:** Jupyter Notebook
+![Python](https://img.shields.io/badge/Python-FFD43B?style=flat-square&logo=python&logoColor=blue)
+![Pandas](https://img.shields.io/badge/Pandas-2C2D72?style=flat-square&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white)
+![Scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557c?style=flat-square&logo=python&logoColor=white)
+![XGBoost](https://img.shields.io/badge/XGBoost-FF6600?style=flat-square&logo=python&logoColor=white)
 
 ---
 
-## 🤖 ML Algorithms Benchmarked
+## 🤖 Model Results
 
 | Algorithm | Accuracy | Precision | Recall | F1-Score |
 |---|---|---|---|---|
@@ -67,60 +92,63 @@ This project applies and benchmarks **7 supervised machine learning algorithms**
 | Random Forest | 0.85 | 0.85 | 0.99 | 0.92 |
 | Naive Bayes | 0.80 | 0.85 | 0.91 | 0.88 |
 | XGBoost | 0.85 | 0.86 | 0.98 | 0.91 |
-| **Gradient Boosting** | **0.86** | **0.85** | **0.98** | **0.92** |
+| 🏆 **Gradient Boosting** | **0.86** | **0.85** | **0.98** | **0.92** |
 
-**Gradient Boosting** achieved the best performance with **86% accuracy** and an AUC of **0.84**, demonstrating strong generalization with minimal overfitting.
+### 🏆 Best Model — Gradient Boosting
+- ✅ **86% accuracy** · AUC = **0.84**
+- ✅ Correctly classified **8,013 non-diabetic** and **566 diabetic** cases
+- ✅ Strong generalization — minimal overfitting on test data
 
 ---
 
 ## 🔑 Key Findings
 
-- **Gradient Boosting & XGBoost** outperformed all other models due to ensemble learning and regularization
-- **Gender-specific factors** (BMI thresholds, hormonal variations, gestational history) significantly improved prediction reliability
-- **Blood glucose level (0.26)**, **cholesterol (0.32)**, and **HbA1c (0.26)** were the strongest predictors of diabetes
-- **Gender and pregnancy** showed a strong negative correlation (-0.85), validating the importance of gender-aware modeling
+- 🥇 **Gradient Boosting & XGBoost** outperformed all models via ensemble learning + regularization
+- 👥 **Gender-specific factors** (BMI thresholds, hormonal variations, gestational history) improved reliability
+- 🩸 **Blood glucose (0.26)**, **cholesterol (0.32)**, and **HbA1c (0.26)** were the strongest predictors
+- 🔗 **Gender & pregnancy** showed strong negative correlation (-0.85), validating gender-aware modeling
 
 ---
 
-## ▶️ How to Run
+## ▶️ Getting Started
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/architinit/Diabetes-Detection-and-Prediction-System-.git
-   cd Diabetes-Detection-and-Prediction-System-
-   ```
+```bash
+# 1. Clone the repository
+git clone https://github.com/architinit/Diabetes-Detection-and-Prediction-System-.git
+cd Diabetes-Detection-and-Prediction-System-
 
-2. Install dependencies:
-   ```bash
-   pip install pandas numpy scikit-learn matplotlib seaborn xgboost jupyter
-   ```
+# 2. Install dependencies
+pip install pandas numpy scikit-learn matplotlib seaborn xgboost jupyter
 
-3. Launch the notebook:
-   ```bash
-   jupyter notebook Main.ipynb
-   ```
+# 3. Run the notebook
+jupyter notebook Main.ipynb
+```
 
 ---
 
 ## 👤 Author
 
 **Archit Bali**  
-B.Tech CSE (AI/ML) — Model Institute of Engineering and Technology, Jammu  
-📧 archit.init@gmail.com  
-🔗 [GitHub](https://github.com/architinit) | [LinkedIn](https://linkedin.com/in/archit-bali)
+B.Tech CSE (AI/ML) · Model Institute of Engineering & Technology, Jammu
+
+[![GitHub](https://img.shields.io/badge/GitHub-architinit-181717?style=flat-square&logo=github)](https://github.com/architinit)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-archit--bali-0077B5?style=flat-square&logo=linkedin)](https://linkedin.com/in/archit-bali)
+[![Email](https://img.shields.io/badge/Email-archit.init@gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:archit.init@gmail.com)
 
 ---
 
 ## 📜 Citation
 
-If you use this work, please cite:
-
-```
-S. Gupta, A. Wali, G. Kaloo, A. Bali, P. Sharma,
-"Diabetes Detection and Prediction Using the Machine Learning Paradigm,"
-IEEE Xplore, 2025. https://ieeexplore.ieee.org/document/11011335
+```bibtex
+@inproceedings{gupta2025diabetes,
+  title     = {Diabetes Detection and Prediction Using the Machine Learning Paradigm},
+  author    = {Gupta, Saksham and Wali, Aarush and Kaloo, Gandharv and Bali, Archit and Sharma, Palvi},
+  booktitle = {IEEE Xplore},
+  year      = {2025},
+  url       = {https://ieeexplore.ieee.org/document/11011335}
+}
 ```
 
 ---
 
-⭐ If you found this useful, consider starring the repository!
+<p align="center">⭐ Star this repo if you found it useful!</p>
