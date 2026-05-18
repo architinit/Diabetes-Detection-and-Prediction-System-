@@ -30,27 +30,31 @@ This project benchmarks **7 supervised ML algorithms** on a dataset of **50,000 
 ## 🔄 Methodology Flowchart
 
 ```mermaid
-flowchart LR
-    A([🗄️ Dataset\n50K · 12 Features]) --> B[🔍 Feature\nSelection]
-    B --> C[⚙️ Preprocessing\nNormalization · Encoding]
-    C --> D[✂️ Train / Test\n80% · 20%]
+flowchart TD
+    classDef data    fill:#1d6fa4,stroke:#155a87,color:#fff,font-weight:bold
+    classDef process fill:#2e86ab,stroke:#1f6080,color:#fff
+    classDef model   fill:#6c4fa3,stroke:#4e3880,color:#fff
+    classDef best    fill:#e76f51,stroke:#c95a3e,color:#fff,font-weight:bold
+    classDef output  fill:#2a9d8f,stroke:#1e7268,color:#fff,font-weight:bold
 
-    D --> subML
+    A[(🗄️ Dataset\n50,000 Records · 12 Features)]:::data
+    A --> B[🔍 Feature Selection\nCorrelation Heatmap Analysis]:::process
+    B --> C[⚙️ Data Preprocessing\nMin-Max Normalization · Label Encoding · Standard Scaling]:::process
+    C --> D[✂️ Train / Test Split — 80% · 20%]:::process
 
-    subgraph subML [🤖 ML Models]
-        direction TB
-        M1[Logistic Reg.] 
-        M2[Decision Tree]
-        M3[KNN]
-        M4[Random Forest]
-        M5[Naive Bayes]
-        M6[XGBoost]
-        M7[Gradient Boost]
-    end
+    D --> M1 & M2 & M3 & M4 & M5 & M6 & M7
 
-    subML --> E[📊 Evaluation\nAccuracy · F1 · AUC-ROC]
-    E --> F([🏆 Gradient Boost\n86% Acc · AUC 0.84])
-    F --> G([🩺 Diabetes\nRisk Prediction])
+    M1[Logistic\nRegression]:::model
+    M2[Decision\nTree]:::model
+    M3[K-Nearest\nNeighbor]:::model
+    M4[Random\nForest]:::model
+    M5[Naive\nBayes]:::model
+    M6[XG\nBoost]:::model
+    M7[⭐ Gradient\nBoosting]:::best
+
+    M1 & M2 & M3 & M4 & M5 & M6 & M7 --> E[📊 Evaluation — Accuracy · Precision · Recall · F1-Score · AUC-ROC]:::process
+    E --> F[🏆 Best Model — Gradient Boosting\n86% Accuracy · AUC 0.84 · F1-Score 0.92]:::best
+    F --> G([🩺 Diabetes Risk Prediction]):::output
 ```
 
 ---
